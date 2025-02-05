@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
@@ -11,66 +10,67 @@
     <title>Video patches</title>
   </head>
   <body>
-    <div class="video-container">
+    <div class="container">
       <video
         src="./assets/videos/video.webm"
         autoplay
         muted
         loop
         preload="auto"></video>
-
-      <!-- Desktop Text -->
-      <div class="text text-desktop">
-        <div class="box-span">
-          <span>We are here</span>
-          <div class="sqr"></div>
-          <span>to make</span>
-        </div>
-        <div class="box-span">
-          <span>healthy</span>
-          <div class="sqr"></div>
-          <span>living effortless,</span>
-        </div>
-        <div class="box-span">
-          <span>so you can</span>
-          <div class="sqr"></div>
-          <span>live longer</span>
-        </div>
-        <div class="box-span">
-          <span>and happier</span>
-          <div class="sqr"></div>
-        </div>
-      </div>
-
-      <!-- Mobile Text -->
-      <div class="text text-mobile">
-        <div class="box-span">
-          <span>We are here</span>
-          <div class="sqr"></div>
-        </div>
-        <div class="box-span">
-          <span>to</span>
-          <div class="sqr"></div>
-          <span>make</span>
-        </div>
-        <div class="box-span">
-          <div class="sqr"></div>
-          <span>healthy living</span>
-        </div>
-        <div class="box-span">
-          <span>effortless, so you</span>
-        </div>
-        <div class="box-span">
-          <span>can</span>
-          <div class="sqr"></div>
-          <span>live longer</span>
-        </div>
-        <div class="box-span">
-          <span>and happier</span>
-          <div class="sqr"></div>
+      <div class="desktop">
+        <div class="text-container">
+          <div class="row">
+            <span class="text">We're here</span>
+            <span class="text patch">&nbsp;</span>
+            <span class="text">to make</span>
+          </div>
+          <div class="row">
+            <span class="text">healthy</span>
+            <span class="text patch">&nbsp;</span>
+            <span class="text">living effortless,</span>
+          </div>
+          <div class="row">
+            <span class="text">so you can</span>
+            <span class="text patch">&nbsp;</span>
+            <span class="text">live longer</span>
+          </div>
+          <div class="row">
+            <span class="text">and happier</span>
+            <span class="text patch right-border">&nbsp;</span>
+          </div>
+          <div class="black"></div>
         </div>
       </div>
-      <div class="mask-shadow"></div>
+      <div class="mobile">
+        <div class="text-container">
+          <div class="row">
+            <span class="text">We're here</span>
+            <span class="text patch right-border-mobile">&nbsp;</span>
+          </div>
+          <div class="row">
+            <span class="text">to</span>
+            <span class="text patch">&nbsp;</span>
+            <span class="text">make</span>
+          </div>
+          <div class="row">
+            <span class="text patch left-border-mobile">&nbsp;</span>
+            <span class="text">healthy living</span>
+          </div>
+          <div class="row">
+            <span class="text">effortless, so you</span>
+          </div>
+          <div class="row">
+            <span class="text">can</span>
+            <span class="text patch">&nbsp;</span>
+            <span class="text">live longer</span>
+          </div>
+          <div class="row">
+            <span class="text">and happier</span>
+            <span class="text patch right-border-mobile">&nbsp;</span>
+          </div>
+          <div class="black"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

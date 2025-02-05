@@ -1,124 +1,124 @@
-:root {
-  --font-stack: UbuntuBold, sans-serif;
-  --black: #000;
-  --white: #fff;
-  --z-video: 1;
-  --z-text: 3;
-  --breakpoint-mobile: 650px;
-}
-
-/* Font face declaration */
 @font-face {
   font-family: UbuntuBold;
   src: url(../fonts/Ubuntu-Bold.woff2);
 }
 
-/* Base styles */
-html,
-body {
+:root {
+  --clr-black: #000000;
+  --clr-white: #ffffffff;
+}
+
+* {
   margin: 0;
   padding: 0;
-  block-size: 100%;
+  font-family: UbuntuBold, sans-serif;
+  color: var(--clr-white);
+}
+
+body {
   overflow: hidden;
-  font-family: var(--font-stack);
-  font-weight: bold;
 }
 
-/* Video container styles */
-.video-container {
-  position: relative;
-  block-size: 100%;
+.container {
+  display: flex;
+  justify-items: center;
+  line-height: 1;
 }
 
-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
-  z-index: var(--z-video);
+.container > video {
+  position: fixed;
 }
 
-/* Text overlay styles */
+.text-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  block-size: 100dvh;
+}
+.row {
+  flex-basis: 100%;
+  display: flex;
+}
+
 .text {
+  flex: 0;
+  text-wrap: nowrap;
   position: relative;
-  z-index: var(--z-text);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--white);
-  font-size: calc(49vw / 7);
-  line-height: 1.35;
+  color: var(--clr-white);
+  font-weight: bold;
+  padding: 1rem;
+  background: var(--clr-black);
+  outline: 5px solid var(--clr-black);
 }
 
-.text .box-span {
-  display: flex;
+.patch {
+  flex: 1 0;
   position: relative;
-  inline-size: 100%;
-  align-items: center;
-}
-
-.sqr {
   display: inline-block;
-  min-inline-size: 2ch;
-  inline-size: auto;
-  block-size: 1em;
+  background: var(--clr-white);
+  padding: 0;
+  margin: 0;
+
+  mix-blend-mode: multiply;
+
+  vertical-align: bottom;
+}
+
+.black {
+  block-size: 100%;
+  inline-size: 100%;
+  position: relative;
   flex-grow: 1;
-  vertical-align: middle;
-  position: relative;
-  z-index: 1;
-  background-color: transparent;
-  box-shadow: inset 0 0 0 0.15em var(--black);
-  outline: 0.5em solid var(--black);
+  flex-basis: fill;
+  background-color: var(--clr-black);
 }
 
-.text span {
-  z-index: 2;
-  display: inline-block;
-  background-color: var(--black);
-  flex-shrink: 1;
-  white-space: nowrap;
-  block-size: 100%;
-  box-shadow: inset 0 0 0 0.3em var(--black);
-  border-bottom: 0.02em solid var(--black);
-}
-
-.mask-shadow {
-  position: relative;
-  z-index: var(--z-text);
-  background-color: var(--black);
-  block-size: 100%;
-  inline-size: 100%;
-  outline: 0.01em solid var(--black);
-}
-
-/* Responsive text switching */
-.text-desktop {
-  display: flex;
-}
-.text-mobile {
-  display: none;
-}
-
-@media (max-width: 650px) {
-  .text {
-    font-size: calc(100vw / 9);
-  }
-
-  .text-desktop {
+@media (width <= 768px) {
+  .desktop {
     display: none;
   }
-  .text-mobile {
-    display: flex;
+  .mobile {
+    display: unset;
   }
-
-  .sqr {
-    min-inline-size: auto;
+  .container > video {
+    transform: translate(-50%, 0);
   }
-
-  .box-span:nth-of-type(4) span {
-    flex: 1;
-    text-align: justify;
+  .text {
+    font-size: calc(28dvw / 2);
+  }
+  .patch {
+    min-inline-size: 2ch;
+    box-shadow: inset 0 0.4em var(--clr-black), inset 0 -0.25em var(--clr-black);
+  }
+  .right-border-mobile {
+    box-shadow: inset 0 0.4em var(--clr-black), inset 0 -0.25em var(--clr-black),
+      inset -0.35em 0 var(--clr-black);
+  }
+  .left-border-mobile {
+    box-shadow: inset 0 0.4em var(--clr-black), inset 0 -0.25em var(--clr-black),
+      inset 0.35em 0 var(--clr-black);
+  }
+}
+@media (width > 768px) {
+  .desktop {
+    display: unset;
+  }
+  .mobile {
+    display: none;
+  }
+  .container > video {
+    inline-size: 100%;
+  }
+  .text {
+    font-size: calc(35dvw / 5);
+  }
+  .patch {
+    min-inline-size: 4ch;
+    outline: 5px solid var(--clr-black);
+    box-shadow: inset 0 0.4em var(--clr-black), inset 0 -0.3em var(--clr-black);
+  }
+  .right-border {
+    box-shadow: inset 0 0.4em var(--clr-black), inset 0 -0.3em var(--clr-black),
+      inset -0.2em 0 var(--clr-black);
   }
 }
