@@ -84,7 +84,7 @@ body {
     transform: translate(-50%, 0);
   }
   .text {
-    font-size: calc(28dvw / 2);
+    font-size: calc(30dvw / 2);
   }
   .patch {
     min-inline-size: 2ch;
